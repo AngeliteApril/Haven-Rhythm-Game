@@ -303,10 +303,10 @@ script = ExtResource("1_ig7tw")
 
 [node name="Background" type="Panel" parent="." unique_id=2089089998]
 material = ExtResource("2_kek77")
-offset_left = -39.0
+offset_left = -2.0
 offset_top = -9.0
-offset_right = 685.0
-offset_bottom = 530.0
+offset_right = 649.0
+offset_bottom = 471.0
 
 [node name="Detector" type="Node2D" parent="." unique_id=1197794395]
 
