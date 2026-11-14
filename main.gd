@@ -42,7 +42,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_test_down"):
 		arrow_generator.make_arrow()
 		
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	for x in area_2d.get_overlapping_areas():
 		if down == true and x.name.contains("Down"):
 			down_target.animation_player.play("Hit")
