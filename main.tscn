@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c67msij4wo3fs" path="res://arrow_generator.tscn" id="2_h2yge"]
 [ext_resource type="Material" uid="uid://42c0uuauuqy" path="res://back.tres" id="2_kek77"]
 [ext_resource type="PackedScene" uid="uid://dgvv122tc3so" path="res://arrow_generator_up.tscn" id="3_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://dtkp7kmx8mg0j" path="res://Songs/image-removebg-preview.png" id="3_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://0o2lj1j8bocp" path="res://arrow_generator_right.tscn" id="4_lquwl"]
 [ext_resource type="PackedScene" uid="uid://b8xx4a0llhe" path="res://arrow_generator_left.tscn" id="5_7mycd"]
 [ext_resource type="PackedScene" uid="uid://18qgorg4bg78" path="res://target.tscn" id="7_272bh"]
@@ -11,6 +12,7 @@
 [ext_resource type="Script" uid="uid://dev2mwwbf023n" path="res://player_feedback_ui.gd" id="8_5vw27"]
 [ext_resource type="AudioStream" uid="uid://bw4lxlrxo3wnl" path="res://Songs/Wei_Epilogue.wav" id="8_kek77"]
 [ext_resource type="AudioStream" uid="uid://vfth2fbh715f" path="res://Songs/Nocturne.wav" id="9_efxa6"]
+[ext_resource type="FontFile" uid="uid://c7fpg76otd1gx" path="res://assets/pixelmix.ttf" id="12_dg77c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ucufk"]
 size = Vector2(636.5, 24)
@@ -1777,7 +1779,13 @@ material = ExtResource("2_kek77")
 offset_left = -2.0
 offset_top = -9.0
 offset_right = 649.0
-offset_bottom = 471.0
+offset_bottom = 479.0
+
+[node name="4f8270a86c0045c3Bb27B36792516a9b" type="Sprite2D" parent="." unique_id=2140334440]
+modulate = Color(0.7294118, 0, 1, 1)
+position = Vector2(323.99997, 242.49998)
+scale = Vector2(1.3485714, 1.1515789)
+texture = ExtResource("3_ycdy4")
 
 [node name="Detector" type="Node2D" parent="." unique_id=1197794395]
 
@@ -1840,10 +1848,10 @@ autoplay = &"Song 3"
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 2.0
-offset_top = 15.0
-offset_right = 2.0
-offset_bottom = 15.0
+offset_left = 41.0
+offset_top = 29.0
+offset_right = 41.0
+offset_bottom = 29.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_ucufk")
@@ -1858,6 +1866,7 @@ script = ExtResource("8_5vw27")
 
 [node name="Indicator" type="Label" parent="CanvasLayer/MarginContainer/PlayerFeedbackUI" unique_id=557068750]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("12_dg77c")
 
 [node name="Timer" type="Timer" parent="CanvasLayer/MarginContainer/PlayerFeedbackUI/Indicator" unique_id=1307090060]
 wait_time = 0.3
@@ -1865,12 +1874,15 @@ one_shot = true
 
 [node name="Combo" type="Label" parent="CanvasLayer/MarginContainer/PlayerFeedbackUI" unique_id=1346306377]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("12_dg77c")
 text = "Combo: 0"
 
 [node name="Score" type="Label" parent="CanvasLayer/MarginContainer/PlayerFeedbackUI" unique_id=1134404921]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("12_dg77c")
 text = "Score: 0"
 
 [node name="Misses" type="Label" parent="CanvasLayer/MarginContainer/PlayerFeedbackUI" unique_id=1822456225]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("12_dg77c")
 text = "Misses: 0"
