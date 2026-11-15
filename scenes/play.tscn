@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bwq0bw0ydn5wn"]
+[gd_scene format=3 uid="uid://b7n12rno6bf58"]
 
 [ext_resource type="Script" uid="uid://coqcvirk6oidk" path="res://scripts/PlayListener.gd" id="1_8r3iy"]
 [ext_resource type="FontFile" uid="uid://c7fpg76otd1gx" path="res://assets/pixelmix.ttf" id="2_bofkp"]

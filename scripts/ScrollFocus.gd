@@ -6,6 +6,7 @@ extends ScrollContainer
 @onready var songsContain = get_node("SongsContain")
 @onready var scrollDetect = songsmenu.get_node("ScrollDetect")
 
+
 var songsTable = []
 var previousFocusedSong = null
 
@@ -139,10 +140,11 @@ func _input(event: InputEvent) -> void:
 func _select_song(song_name: String) -> void:
 	match song_name:
 		"song1":
-			get_tree().change_scene_to_file("res://scenes/Song1.tscn")
+			get_tree().change_scene_to_file("res://scenes/level1.tscn")
+
 
 		"song2":
-			get_tree().change_scene_to_file("res://scenes/Song2.tscn")
+			get_tree().change_scene_to_file("res://scenes/level2.tscn")
 
 		"song3":
-			get_tree().change_scene_to_file("res://scenes/Song3.tscn")
+			get_tree().change_scene_to_file("res://scenes/level3.tscn")
