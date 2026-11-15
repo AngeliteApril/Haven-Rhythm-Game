@@ -31,6 +31,9 @@ func _ready() -> void:
 	# Start song animation
 	animPLayer.play("Song 2")
 
+	# Start song animation
+	animPLayer.play("song 1")
+	
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_down"):

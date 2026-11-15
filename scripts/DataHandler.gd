@@ -4,7 +4,7 @@ const DATA_FILE = "user://game-rhythmdata.json"
 
 
 var playerdata = {
-	"score": 0,
+	"scores": [],
 	"gamesplayed": 0,
 	"high_score": {
 		"value": 0

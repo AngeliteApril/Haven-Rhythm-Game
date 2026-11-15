@@ -1840,7 +1840,6 @@ stream = ExtResource("9_0wsoa")
 
 [node name="GamePlayer" type="AnimationPlayer" parent="." unique_id=1435726750]
 libraries/ = SubResource("AnimationLibrary_5vw27")
-autoplay = &"song 1"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1775283826]
 
