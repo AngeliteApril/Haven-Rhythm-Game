@@ -1,0 +1,315 @@
+[gd_scene format=3 uid="uid://coqshv52hgvmo"]
+
+[ext_resource type="Texture2D" uid="uid://m7csj6sgqrmg" path="res://textures/placeholder.png" id="1_5mbse"]
+[ext_resource type="Script" uid="uid://chj6t02q52yp0" path="res://scripts/ScrollFocus.gd" id="2_natt5"]
+[ext_resource type="Texture2D" uid="uid://4bsexpvlu4x7" path="res://assets/song_button_1.png" id="3_85riq"]
+[ext_resource type="Script" uid="uid://2ycemphdfkss" path="res://scripts/ScrollDetection.gd" id="3_r3g3c"]
+[ext_resource type="FontFile" uid="uid://c7fpg76otd1gx" path="res://assets/pixelmix.ttf" id="4_wf3n4"]
+[ext_resource type="Texture2D" uid="uid://cv5rsrm2d0oeu" path="res://assets/song_button_2.png" id="5_h73c4"]
+[ext_resource type="Texture2D" uid="uid://du7jh60e2a4nt" path="res://assets/song_button_3.png" id="6_uui5l"]
+[ext_resource type="Texture2D" uid="uid://cei3gex7mbu3c" path="res://assets/leaderboard.png" id="7_4hago"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ucufk"]
+bg_color = Color(11.708403, 11.708403, 11.708403, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7okha"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_utqmc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q0srp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yfmgw"]
+
+[sub_resource type="Theme" id="Theme_cw06u"]
+VScrollBar/styles/grabber = SubResource("StyleBoxEmpty_7okha")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_utqmc")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_q0srp")
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_yfmgw")
+
+[node name="SongsMenu" type="Control" unique_id=1072254015]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=764240248]
+visible = false
+layout_mode = 0
+offset_left = 39.16684
+offset_top = 139.60999
+offset_right = 266.16684
+offset_bottom = 183.60999
+size_flags_horizontal = 4
+texture = ExtResource("1_5mbse")
+
+[node name="SongsContainer" type="Panel" parent="." unique_id=328259742]
+layout_mode = 0
+offset_right = 665.0
+offset_bottom = 480.0
+scale = Vector2(0.95588857, 0.9989226)
+theme_override_styles/panel = SubResource("StyleBoxFlat_ucufk")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SongsContainer" unique_id=311447170]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -325.52576
+offset_top = -222.23944
+offset_right = 325.52576
+offset_bottom = 222.23944
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="ScrollContain" type="ScrollContainer" parent="SongsContainer/HBoxContainer" unique_id=1049531620]
+custom_minimum_size = Vector2(285, 200)
+layout_mode = 2
+size_flags_vertical = 4
+theme = SubResource("Theme_cw06u")
+script = ExtResource("2_natt5")
+
+[node name="SongsContain" type="VBoxContainer" parent="SongsContainer/HBoxContainer/ScrollContain" unique_id=258025710]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 18
+
+[node name="SongTemplate" type="TextureRect" parent="SongsContainer/HBoxContainer/ScrollContain/SongsContain" unique_id=1660776419]
+custom_minimum_size = Vector2(20, 50)
+layout_mode = 2
+texture = ExtResource("6_uui5l")
+
+[node name="SongTitle" type="Label" parent="SongsContainer/HBoxContainer/ScrollContain/SongsContain/SongTemplate" unique_id=627675877]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 19.41017
+offset_top = 9.4001465
+offset_right = -148.58983
+offset_bottom = -24.599854
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_wf3n4")
+theme_override_font_sizes/font_size = 11
+text = "Learning Basics"
+
+[node name="SongDifficulty" type="Label" parent="SongsContainer/HBoxContainer/ScrollContain/SongsContain/SongTemplate" unique_id=1425382385]
+layout_mode = 0
+offset_left = 19.410168
+offset_top = 26.418484
+offset_right = 215.41017
+offset_bottom = 39.418484
+theme_override_fonts/font = ExtResource("4_wf3n4")
+theme_override_font_sizes/font_size = 9
+text = "Difficulty: Beginner"
+
+[node name="SongContainer5" type="TextureRect" parent="SongsContainer/HBoxContainer/ScrollContain/SongsContain" unique_id=2078821977]
+visible = false
+custom_minimum_size = Vector2(20, 50)
+layout_mode = 2
+texture = ExtResource("3_85riq")
+
+[node name="SongTitle" type="Label" parent="SongsContainer/HBoxContainer/ScrollContain/SongsContain/SongContainer5" unique_id=2113981546]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 19.41017
+offset_top = 9.4001465
+offset_right = -148.58983
+offset_bottom = -24.599854
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_wf3n4")
+theme_override_font_sizes/font_size = 11
+text = "Learning Basics"
+
+[node name="SongDifficulty" type="Label" parent="SongsContainer/HBoxContainer/ScrollContain/SongsContain/SongContainer5" unique_id=1128660162]
+layout_mode = 0
+offset_left = 19.410168
+offset_top = 26.418484
+offset_right = 215.41017
+offset_bottom = 39.418484
+theme_override_fonts/font = ExtResource("4_wf3n4")
+theme_override_font_sizes/font_size = 9
+text = "Difficulty: Beginner"
+
+[node name="SongContainer6" type="TextureRect" parent="SongsContainer/HBoxContainer/ScrollContain/SongsContain" unique_id=339567991]
+visible = false
+custom_minimum_size = Vector2(20, 50)
+layout_mode = 2
+texture = ExtResource("5_h73c4")
+
+[node name="SongTitle" type="Label" parent="SongsContainer/HBoxContainer/ScrollContain/SongsContain/SongContainer6" unique_id=85728030]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 17.317875
+offset_top = 9.473497
+offset_right = -177.68213
+offset_bottom = -24.526503
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_wf3n4")
+theme_override_font_sizes/font_size = 11
+text = "The Journey"
+
+[node name="SongDescription" type="Label" parent="SongsContainer/HBoxContainer/ScrollContain/SongsContain/SongContainer6" unique_id=2050514594]
+layout_mode = 0
+offset_left = 18.364023
+offset_top = 26.491837
+offset_right = 214.36403
+offset_bottom = 39.491837
+theme_override_fonts/font = ExtResource("4_wf3n4")
+theme_override_font_sizes/font_size = 9
+text = "Difficulty: Advanced"
+
+[node name="SongContainer4" type="TextureRect" parent="SongsContainer/HBoxContainer/ScrollContain/SongsContain" unique_id=1216432714]
+visible = false
+custom_minimum_size = Vector2(20, 50)
+layout_mode = 2
+texture = ExtResource("6_uui5l")
+
+[node name="SongTitle" type="Label" parent="SongsContainer/HBoxContainer/ScrollContain/SongsContain/SongContainer4" unique_id=65563130]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.22558
+offset_top = 10.547928
+offset_right = -214.77441
+offset_bottom = -23.452072
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_wf3n4")
+theme_override_font_sizes/font_size = 11
+text = "Finale"
+
+[node name="SongDescription" type="Label" parent="SongsContainer/HBoxContainer/ScrollContain/SongsContain/SongContainer4" unique_id=1221558668]
+layout_mode = 0
+offset_left = 15.225581
+offset_top = 26.56519
+offset_right = 211.22559
+offset_bottom = 39.56519
+theme_override_fonts/font = ExtResource("4_wf3n4")
+theme_override_font_sizes/font_size = 9
+text = "Difficulty: Expert"
+
+[node name="SongTemplate2" type="TextureRect" parent="SongsContainer/HBoxContainer/ScrollContain/SongsContain" unique_id=966834279]
+custom_minimum_size = Vector2(20, 50)
+layout_mode = 2
+texture = ExtResource("6_uui5l")
+
+[node name="SongTitle" type="Label" parent="SongsContainer/HBoxContainer/ScrollContain/SongsContain/SongTemplate2" unique_id=1896669638]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 19.41017
+offset_top = 9.4001465
+offset_right = -148.58983
+offset_bottom = -24.599854
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_wf3n4")
+theme_override_font_sizes/font_size = 11
+text = "Journey"
+
+[node name="SongDifficulty" type="Label" parent="SongsContainer/HBoxContainer/ScrollContain/SongsContain/SongTemplate2" unique_id=1508355286]
+layout_mode = 0
+offset_left = 19.410168
+offset_top = 26.418484
+offset_right = 215.41017
+offset_bottom = 39.418484
+theme_override_fonts/font = ExtResource("4_wf3n4")
+theme_override_font_sizes/font_size = 9
+text = "Difficulty: Advanced"
+
+[node name="SongTemplate3" type="TextureRect" parent="SongsContainer/HBoxContainer/ScrollContain/SongsContain" unique_id=1057952265]
+custom_minimum_size = Vector2(20, 50)
+layout_mode = 2
+texture = ExtResource("6_uui5l")
+
+[node name="SongTitle" type="Label" parent="SongsContainer/HBoxContainer/ScrollContain/SongsContain/SongTemplate3" unique_id=48614545]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 19.41017
+offset_top = 9.4001465
+offset_right = -148.58983
+offset_bottom = -24.599854
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_wf3n4")
+theme_override_font_sizes/font_size = 11
+text = "Finale"
+
+[node name="SongDifficulty" type="Label" parent="SongsContainer/HBoxContainer/ScrollContain/SongsContain/SongTemplate3" unique_id=1778671829]
+layout_mode = 0
+offset_left = 19.410168
+offset_top = 26.418484
+offset_right = 215.41017
+offset_bottom = 39.418484
+theme_override_fonts/font = ExtResource("4_wf3n4")
+theme_override_font_sizes/font_size = 9
+text = "Difficulty: Expert"
+
+[node name="ScoresBoard" type="TextureRect" parent="SongsContainer/HBoxContainer" unique_id=814657178]
+texture_filter = 1
+custom_minimum_size = Vector2(340, 250)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("7_4hago")
+
+[node name="Label" type="Label" parent="SongsContainer/HBoxContainer/ScoresBoard" unique_id=917285354]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 0.8698844
+offset_top = 14.37858
+offset_right = 0.86987305
+offset_bottom = 42.408775
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_wf3n4")
+text = "Scoreboard - Beginner"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="SongsContainer/HBoxContainer/ScoresBoard" unique_id=649186575]
+layout_mode = 0
+offset_top = 57.42495
+offset_right = 335.63696
+offset_bottom = 250.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SongsContainer/HBoxContainer/ScoresBoard/ScrollContainer" unique_id=432899305]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="PlacementTemplate" type="Label" parent="SongsContainer/HBoxContainer/ScoresBoard/ScrollContainer/VBoxContainer" unique_id=1163801668]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_wf3n4")
+text = "    1.  ABC - 123456"
+
+[node name="ScrollDetect" type="Panel" parent="." unique_id=1949905075]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -315.0
+offset_top = -40.0
+offset_right = -30.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_r3g3c")
