@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://42c0uuauuqy"]
+
+[ext_resource type="Shader" uid="uid://bva7s6vn5jvdm" path="res://back.gdshader" id="1_bk4va"]
+
+[resource]
+shader = ExtResource("1_bk4va")
+shader_parameter/color = Color(0.55, 0.45, 1, 1)
+shader_parameter/glow = 1.0
+shader_parameter/rings = 3
+shader_parameter/star_points = 8
+shader_parameter/star_step = 3
+shader_parameter/ticks = 48
+shader_parameter/orbs = 6
+shader_parameter/line_width = 0.008
+shader_parameter/spin_speed = 0.25
+shader_parameter/pulse_speed = 2.0
+shader_parameter/appear = 1.0

@@ -1,0 +1,496 @@
+[gd_scene format=3 uid="uid://5gwckxw6dhu0"]
+
+[ext_resource type="Script" uid="uid://cgrx8ad2w454s" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://c67msij4wo3fs" path="res://arrow_generator.tscn" id="2_h2yge"]
+[ext_resource type="Material" uid="uid://42c0uuauuqy" path="res://back.tres" id="2_kek77"]
+[ext_resource type="PackedScene" uid="uid://dgvv122tc3so" path="res://arrow_generator_up.tscn" id="3_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://0o2lj1j8bocp" path="res://arrow_generator_right.tscn" id="4_lquwl"]
+[ext_resource type="PackedScene" uid="uid://b8xx4a0llhe" path="res://arrow_generator_left.tscn" id="5_7mycd"]
+[ext_resource type="PackedScene" uid="uid://18qgorg4bg78" path="res://target.tscn" id="7_272bh"]
+[ext_resource type="Script" uid="uid://dev2mwwbf023n" path="res://player_feedback_ui.gd" id="8_5vw27"]
+[ext_resource type="AudioStream" uid="uid://bw4lxlrxo3wnl" path="res://Songs/Wei_Epilogue.wav" id="8_kek77"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ucufk"]
+size = Vector2(636.5, 62)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0a554"]
+size = Vector2(642, 161)
+
+[sub_resource type="Animation" id="Animation_272bh"]
+resource_name = "song 1"
+length = 60.0
+step = 0.3
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Song 1")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("8_kek77")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ArrowGenerator")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(4.3333335, 11.857142, 23.333334, 33.666668, 35.666668, 37, 39, 39.666668, 41, 42.666668, 43.333332, 44.666668, 46.333332, 48, 49, 51.333332, 52.666668, 53.333332, 54.666668, 55.666668, 56.333332, 58),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ArrowGeneratorUp")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.33333334, 8.333333, 23, 24.333334, 32.666668, 34.333332, 35.333332, 36, 37.666668, 38.333332, 39.666668, 40.666668, 42, 43, 44, 45, 45.666668, 47, 48.333332, 49.666668, 50.666668, 51.666668, 53, 54.333332, 56, 57, 58.666668),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ArrowGeneratorRight")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(4.3333335, 7.6666665, 11.857142, 15, 16, 19.333334, 22.666666, 24, 33, 34, 35, 36.666668, 38, 39.333332, 40, 41.666668, 42.666668, 44.333332, 45.333332, 46, 47.666668, 48.333332, 49.333332, 50, 51, 52, 54, 55, 57.333332, 58.333332),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ArrowGeneratorLeft")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.33333337, 23.666666, 24.333334, 33.333332, 34.666668, 36.333332, 37.333332, 38.666668, 40.333332, 41.333332, 42.333332, 43.666668, 45, 46.666668, 47.333332, 48.666668, 50.333332, 52.333332, 53.666668, 55.333332, 56.666668, 57.666668),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}, {
+"args": [],
+"method": &"make_arrow"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5vw27"]
+_data = {
+&"song 1": SubResource("Animation_272bh")
+}
+
+[sub_resource type="SystemFont" id="SystemFont_0a554"]
+subpixel_positioning = 0
+
+[sub_resource type="Theme" id="Theme_ucufk"]
+default_font = SubResource("SystemFont_0a554")
+Label/fonts/font = SubResource("SystemFont_0a554")
+
+[node name="Main" type="Node2D" unique_id=352249489]
+script = ExtResource("1_ig7tw")
+
+[node name="Background" type="Panel" parent="." unique_id=2089089998]
+material = ExtResource("2_kek77")
+offset_left = -2.0
+offset_top = -9.0
+offset_right = 649.0
+offset_bottom = 471.0
+
+[node name="Detector" type="Node2D" parent="." unique_id=1197794395]
+
+[node name="Area2D" type="Area2D" parent="Detector" unique_id=2075843231]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector/Area2D" unique_id=1802915180]
+position = Vector2(324.75, 426)
+shape = SubResource("RectangleShape2D_ucufk")
+
+[node name="LeftTarget" parent="Detector" unique_id=2039232801 instance=ExtResource("7_272bh")]
+texture_filter = 1
+position = Vector2(185, 420)
+
+[node name="DownTarget" parent="Detector" unique_id=1491210754 instance=ExtResource("7_272bh")]
+texture_filter = 1
+position = Vector2(285, 420)
+
+[node name="UpTarget" parent="Detector" unique_id=1696948390 instance=ExtResource("7_272bh")]
+texture_filter = 1
+position = Vector2(385, 420)
+
+[node name="RightTarget" parent="Detector" unique_id=276845165 instance=ExtResource("7_272bh")]
+texture_filter = 1
+position = Vector2(485, 420)
+
+[node name="Area2D2" type="Area2D" parent="Detector" unique_id=1687947037]
+
+[node name="MissZone" type="CollisionShape2D" parent="Detector/Area2D2" unique_id=2084479380]
+position = Vector2(324, 557.5)
+shape = SubResource("RectangleShape2D_0a554")
+
+[node name="ArrowGenerator" parent="." unique_id=1917168019 instance=ExtResource("2_h2yge")]
+texture_filter = 1
+position = Vector2(285, 0)
+
+[node name="ArrowGeneratorUp" parent="." unique_id=925812116 instance=ExtResource("3_1bvp3")]
+position = Vector2(385, 0)
+
+[node name="ArrowGeneratorRight" parent="." unique_id=457239218 instance=ExtResource("4_lquwl")]
+position = Vector2(485, 0)
+
+[node name="ArrowGeneratorLeft" parent="." unique_id=1433690133 instance=ExtResource("5_7mycd")]
+position = Vector2(185, 0)
+
+[node name="Song 1" type="AudioStreamPlayer" parent="." unique_id=847977464]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1435726750]
+libraries/ = SubResource("AnimationLibrary_5vw27")
+autoplay = &"song 1"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1775283826]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=273479807]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 15.0
+offset_right = 2.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_ucufk")
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="PlayerFeedbackUI" type="VBoxContainer" parent="CanvasLayer/MarginContainer" unique_id=1780226037]
+layout_mode = 2
+script = ExtResource("8_5vw27")
+
+[node name="Indicator" type="Label" parent="CanvasLayer/MarginContainer/PlayerFeedbackUI" unique_id=557068750]
+layout_mode = 2
+
+[node name="Timer" type="Timer" parent="CanvasLayer/MarginContainer/PlayerFeedbackUI/Indicator" unique_id=1307090060]
+wait_time = 0.3
+one_shot = true
+
+[node name="Combo" type="Label" parent="CanvasLayer/MarginContainer/PlayerFeedbackUI" unique_id=1346306377]
+layout_mode = 2
+text = "Combo: 0"
+
+[node name="Score" type="Label" parent="CanvasLayer/MarginContainer/PlayerFeedbackUI" unique_id=1134404921]
+layout_mode = 2
+text = "Score: 0"
+
+[node name="Misses" type="Label" parent="CanvasLayer/MarginContainer/PlayerFeedbackUI" unique_id=1822456225]
+layout_mode = 2
+text = "Misses: 0"
