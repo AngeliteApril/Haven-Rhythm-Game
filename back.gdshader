@@ -1,85 +1,51 @@
-// Pixel Dreamer — Procedural Magic Circle (Godot 4 · canvas_item · works in Compatibility / web)
-// MIT License · https://pixeldreamerstudio.itch.io/
-// Put it on a ColorRect or Sprite2D (square). No textures needed.
-// Change ring count, star points, tick marks, spin speed and glow from the inspector.
 shader_type canvas_item;
-render_mode blend_add;
 
-uniform vec4 color : source_color = vec4(0.55, 0.45, 1.0, 1.0);
-uniform float glow : hint_range(0.0, 4.0) = 1.0;
-uniform int rings : hint_range(1, 5) = 3;
-uniform int star_points : hint_range(0, 12) = 8;
-uniform int star_step : hint_range(1, 5) = 3; // 8 + 3 = octagram · 5 + 2 = pentagram · 7 + 3 = heptagram
-uniform int ticks : hint_range(0, 96) = 48;
-uniform int orbs : hint_range(0, 12) = 6;
-uniform float line_width : hint_range(0.002, 0.03) = 0.008;
-uniform float spin_speed = 0.25;
-uniform float pulse_speed = 2.0;
-uniform float appear : hint_range(0.0, 1.0) = 1.0; // animate 0 -> 1 to draw the circle in
+uniform vec4 bottom_color: source_color;
+uniform vec4 top_color: source_color;
 
-float ring(float r, float radius, float w) {
-	return smoothstep(w, 0.0, abs(r - radius));
+uniform float beam_distance: hint_range(0.0, 0.3);
+uniform float beam_height: hint_range(0.0, 0.1);
+uniform float beam_width: hint_range(0.0, 0.5);
+uniform int total_phases: hint_range(2, 20, 1);
+
+
+float rand(float n){return fract(sin(n) * 43758.5453123);}
+
+
+float noise(float p){
+	float fl = floor(p);
+  float fc = fract(p);
+	return mix(rand(fl), rand(fl + 1.0), fc);
 }
-float seg(vec2 p, vec2 a, vec2 b, float w) {
-	vec2 pa = p - a;
-	vec2 ba = b - a;
-	float h = clamp(dot(pa, ba) / dot(ba, ba), 0.0, 1.0);
-	return smoothstep(w, 0.0, length(pa - ba * h));
+
+
+float fmod(float x, float y) {
+	return x - floor(x / y) * y;
 }
-vec2 rot(vec2 p, float a) {
-	float c = cos(a);
-	float s = sin(a);
-	return vec2(c * p.x - s * p.y, s * p.x + c * p.y);
+
+
+vec4 lerp(vec4 a, vec4 b, float w) {
+	return a + w * (b - a);
 }
+
 
 void fragment() {
-	vec2 p = (UV - 0.5) * 2.0;
-	float r = length(p);
-	float w = line_width;
-	float t = TIME;
-	float m = 0.0;
-	// outer + inner rings, alternating spin direction
-	for (int i = 0; i < 5; i++) {
-		if (i >= rings) break;
-		float rad = 0.92 - float(i) * 0.14;
-		m += ring(r, rad, w * (i == 0 ? 1.6 : 1.0));
-	}
-	// tick marks between ring 0 and ring 1
-	if (ticks > 0) {
-		vec2 q = rot(p, t * spin_speed);
-		float a = atan(q.y, q.x) / TAU + 0.5;
-		float k = abs(fract(a * float(ticks)) - 0.5);
-		float band = step(0.8, r) * step(r, 0.9);
-		m += smoothstep(0.08, 0.0, k) * band;
-	}
-	// star polygon
-	if (star_points > 1) {
-		vec2 q = rot(p, -t * spin_speed * 0.6);
-		float R = 0.92 - float(rings - 1) * 0.14 - 0.02;
-		R = max(R, 0.3);
-		for (int i = 0; i < 12; i++) {
-			if (i >= star_points) break;
-			float a0 = TAU * float(i) / float(star_points) + TAU * 0.25;
-			float a1 = TAU * float(i + star_step) / float(star_points) + TAU * 0.25;
-			m += seg(q, vec2(cos(a0), sin(a0)) * R, vec2(cos(a1), sin(a1)) * R, w);
-		}
-	}
-	// orbs on the second ring
-	if (orbs > 0) {
-		vec2 q = rot(p, t * spin_speed * 1.5);
-		float a = atan(q.y, q.x);
-		float sector = TAU / float(orbs);
-		float ca = round(a / sector) * sector;
-		vec2 c = vec2(cos(ca), sin(ca)) * 0.78;
-		float d = length(q - c);
-		m += ring(d, 0.035, w) + smoothstep(0.02, 0.0, d);
-	}
-	// draw-in mask (sweeps around)
-	float ang = atan(p.y, p.x) / TAU + 0.5;
-	m *= step(ang, appear * 1.001);
-	float pulse = 0.85 + 0.15 * sin(t * pulse_speed);
-	float halo = smoothstep(1.0, 0.2, r) * 0.08 * glow;
-	vec3 col = color.rgb * (m * glow * pulse + halo);
-	col += vec3(1.0) * pow(clamp(m, 0.0, 1.0), 3.0) * 0.12;
-	COLOR = vec4(col, clamp(m + halo, 0.0, 1.0) * color.a);
+	float t = float(total_phases);
+	float s = 1.0 / t;
+	float d = fmod(UV.y, s);
+	float i = floor(UV.y * t);
+	float ci = i + 1.0;
+	float cit = ci / t;
+	float beam_pos = s - d - beam_distance;
+	float effective_beam_width = beam_width * cit + sqrt(pow(beam_height / 2.0, 2.0) - pow(beam_pos - beam_height / 2.0, 2.0));
+	float beam_x = fmod(TIME * noise(ci) * cit, 1.0);
+	float best_distance = min(abs(beam_x - UV.x), 1.0 - abs(beam_x - UV.x));
+	
+	if (beam_pos >= 0.0 && beam_pos <= beam_height && 
+		best_distance <= effective_beam_width) i++;
+	
+	
+	i = clamp(i, 0.0, t - 1.0);
+	
+	COLOR = lerp(top_color, bottom_color, i / (t - 1.0));
 }
