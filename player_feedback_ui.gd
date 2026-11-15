@@ -18,7 +18,7 @@ func _ready() -> void:
 func sucessfull_hit():
 	indicator.text = "Great!"
 	timer.start()
-	score += 300
+	score += 300 * 0.1 * (combo + 1)
 	combo += 1
 	score_label.text = "Score: " + str(score)
 	combo_label.text = "Combo: " + str(combo)
