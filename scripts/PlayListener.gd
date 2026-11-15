@@ -2,6 +2,7 @@ extends Control
 
 var entered: bool = false
 @onready var pressEnterLabel: Label = $Panel/EnterLabel
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
 # Called when the node enters the scene tree for the first time.
@@ -19,6 +20,9 @@ func _input(event: InputEvent) -> void:
 			print("Not First Session")
 			get_tree().change_scene_to_file("res://scenes/mainmenu.tscn")
 
+func _process(delta: float) -> void:
+	animation_player.play("Enter")
+	
 
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:

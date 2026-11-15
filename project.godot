@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Rythem Game Practice"
-run/main_scene="uid://5gwckxw6dhu0"
+run/main_scene="uid://bwq0bw0ydn5wn"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
