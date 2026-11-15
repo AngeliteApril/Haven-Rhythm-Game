@@ -11,14 +11,8 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_enter"):
-		var sessiosntatus = DataHandler.get_data("firstsession")
-		if !sessiosntatus:
-			DataHandler.set_data("firstsession", true)
-			DataHandler.save()
-			get_tree().change_scene_to_file("res://scenes/optionsmenu.tscn")
-		else:
-			print("Not First Session")
-			get_tree().change_scene_to_file("res://scenes/mainmenu.tscn")
+		get_tree().change_scene_to_file("res://scenes/mainmenu.tscn")
+			
 
 func _process(delta: float) -> void:
 	animation_player.play("Enter")
