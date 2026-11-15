@@ -1,9 +1,9 @@
 extends Node2D
 
-var down : bool = false
-var up : bool = false
-var left : bool = false
-var right : bool = false
+var down: bool = false
+var up: bool = false
+var left: bool = false
+var right: bool = false
 @onready var area_2d: Area2D = $Detector/Area2D
 @onready var arrow_generator: Node2D = $ArrowGenerator
 @onready var arrow_generator_up: Node2D = $ArrowGeneratorUp
@@ -12,6 +12,9 @@ var right : bool = false
 @onready var up_target: Node2D = $Detector/UpTarget
 @onready var right_target: Node2D = $Detector/RightTarget
 @onready var miss_zone: Area2D = $Detector/Area2D2
+
+@onready var animPLayer = get_node("GamePlayer")
+
 
 signal hit
 signal miss
@@ -66,6 +69,7 @@ func _process(_delta: float) -> void:
 			right = false
 			
 func _ready() -> void:
+	# animPLayer.play()
 	miss_zone.area_entered.connect(_on_miss_zone_area_entered)
 	
 func _on_miss_zone_area_entered(area: Area2D) -> void:
