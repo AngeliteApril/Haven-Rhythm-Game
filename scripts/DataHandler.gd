@@ -14,23 +14,28 @@ var playerdata = {
 
 var songdata = {
 	"song1": {
-		"songtitle": "content",
+		"songtitle": "content1",
 		"artist": "content",
 		"songdescription": "content",
 		"songpath": "content",
+		"difficulty": "Easy"
 	},
 	"song2": {
-		"songtitle": "content",
+		"songtitle": "content2",
 		"artist": "content",
 		"songdescription": "content",
 		"songpath": "content",
+		"difficulty": "Medium"
 	},
 	"song3": {
-		"songtitle": "",
-		"artist": 0,
+		"songtitle": "content3",
+		"artist": "content",
 		"songdescription": "content",
 		"songpath": "content",
+		"difficulty": "Hard"
 	},
+
+	
 }
 
 
