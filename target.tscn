@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://18qgorg4bg78"]
 
 [ext_resource type="Script" uid="uid://mhphldrfwdsk" path="res://target.gd" id="1_e1yvt"]
-[ext_resource type="Texture2D" uid="uid://b4bv5fn6gkfkv" path="res://gear.png" id="1_t2jmu"]
+[ext_resource type="Texture2D" uid="uid://cvvscxg2osyt6" path="res://assets/target.png" id="2_e1yvt"]
 
 [sub_resource type="Animation" id="Animation_t2jmu"]
 resource_name = "Hit"
@@ -46,7 +46,8 @@ scale = Vector2(2, 2)
 script = ExtResource("1_e1yvt")
 
 [node name="Target" type="Sprite2D" parent="." unique_id=540523304]
-texture = ExtResource("1_t2jmu")
+scale = Vector2(3, 3)
+texture = ExtResource("2_e1yvt")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=212692679]
 libraries/ = SubResource("AnimationLibrary_5ebp1")
