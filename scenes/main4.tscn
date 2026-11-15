@@ -1,18 +1,18 @@
 [gd_scene format=3 uid="uid://b1sl21m8ge7uv"]
 
-[ext_resource type="Script" uid="uid://v8hb3ynsma14" path="res://main.gd" id="1_sdhlb"]
+[ext_resource type="Script" uid="uid://mn1fcu2wlo56" path="res://scenes/GameHandler3.gd" id="1_v1qh3"]
 [ext_resource type="Material" uid="uid://42c0uuauuqy" path="res://back.tres" id="2_d58k3"]
-[ext_resource type="Texture2D" uid="uid://343ujkc7slxy" path="res://Songs/image-removebg-preview.png" id="3_pf87a"]
+[ext_resource type="Texture2D" uid="uid://dtkp7kmx8mg0j" path="res://Songs/image-removebg-preview.png" id="3_pf87a"]
 [ext_resource type="PackedScene" uid="uid://18qgorg4bg78" path="res://target.tscn" id="4_gvpar"]
 [ext_resource type="PackedScene" uid="uid://c67msij4wo3fs" path="res://arrow_generator.tscn" id="5_885nu"]
 [ext_resource type="PackedScene" uid="uid://dgvv122tc3so" path="res://arrow_generator_up.tscn" id="6_p6orn"]
 [ext_resource type="PackedScene" uid="uid://0o2lj1j8bocp" path="res://arrow_generator_right.tscn" id="7_sksk4"]
 [ext_resource type="PackedScene" uid="uid://b8xx4a0llhe" path="res://arrow_generator_left.tscn" id="8_wi7qa"]
-[ext_resource type="AudioStream" uid="uid://bmr3qub5heirb" path="res://Songs/Catena_3.wav" id="9_30ps6"]
+[ext_resource type="AudioStream" uid="uid://bho1rruyhkqaf" path="res://Songs/Catena_3.wav" id="9_30ps6"]
 [ext_resource type="AudioStream" uid="uid://duwdfai5sg2x8" path="res://Songs/Nocturne.wav" id="10_v6a38"]
 [ext_resource type="AudioStream" uid="uid://bw4lxlrxo3wnl" path="res://Songs/Wei_Epilogue.wav" id="11_vkllv"]
 [ext_resource type="Script" uid="uid://dev2mwwbf023n" path="res://player_feedback_ui.gd" id="12_w3tot"]
-[ext_resource type="FontFile" uid="uid://bsgeeyaidclxl" path="res://assets/pixelmix.ttf" id="13_h31b4"]
+[ext_resource type="FontFile" uid="uid://c7fpg76otd1gx" path="res://assets/pixelmix.ttf" id="13_h31b4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ucufk"]
 size = Vector2(636.5, 24)
@@ -1772,7 +1772,7 @@ default_font = SubResource("SystemFont_0a554")
 Label/fonts/font = SubResource("SystemFont_0a554")
 
 [node name="Main" type="Node2D" unique_id=352249489]
-script = ExtResource("1_sdhlb")
+script = ExtResource("1_v1qh3")
 
 [node name="Background" type="Panel" parent="." unique_id=2089089998]
 material = ExtResource("2_d58k3")
@@ -1838,11 +1838,7 @@ stream = ExtResource("9_30ps6")
 
 [node name="Song 3" type="AudioStreamPlayer" parent="." unique_id=193646756]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1435726750]
-libraries/ = SubResource("AnimationLibrary_5vw27")
-autoplay = &"song 1"
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationPlayer" unique_id=86325647]
+[node name="GamePlayer" type="AnimationPlayer" parent="." unique_id=1435726750]
 libraries/ = SubResource("AnimationLibrary_5vw27")
 autoplay = &"song 1"
 

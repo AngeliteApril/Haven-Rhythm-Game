@@ -2,4 +2,4 @@ extends Node
 
 
 func _ongameEnding():
-	print("Ending")
+	print("okay")

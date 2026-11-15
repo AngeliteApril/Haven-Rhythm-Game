@@ -17,17 +17,19 @@ var right: bool = false
 @onready var miss_zone: Area2D = $Detector/Area2D2
 @onready var animPLayer: AnimationPlayer = get_node("GamePlayer")
 
+@onready var playerScoreAcess = get_node("CanvasLayer").get_node("MarginContainer").get_node("PlayerFeedbackUI")
+
+
 signal hit
 signal miss
 
 
 func _ready() -> void:
-    # Connect signals ONCE
     animPLayer.animation_finished.connect(_onGameEnd)
     miss_zone.area_entered.connect(_on_miss_zone_area_entered)
 
     # Start song animation
-    animPLayer.play("song 1")
+    animPLayer.play("Song 2")
 
 
 func _input(event: InputEvent) -> void:
@@ -86,7 +88,7 @@ func _process(_delta: float) -> void:
 
 
 func _onGameEnd(anim_name: StringName) -> void:
-    if anim_name == "song 1":
+    if anim_name == "Song 2":
         print("This Game Has Ended!")
 
 
