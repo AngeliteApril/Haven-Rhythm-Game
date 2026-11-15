@@ -1,18 +1,18 @@
 [gd_scene format=3 uid="uid://5gwckxw6dhu0"]
 
-[ext_resource type="Script" uid="uid://cgrx8ad2w454s" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://v8hb3ynsma14" path="res://main.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://c67msij4wo3fs" path="res://arrow_generator.tscn" id="2_h2yge"]
 [ext_resource type="Material" uid="uid://42c0uuauuqy" path="res://back.tres" id="2_kek77"]
 [ext_resource type="PackedScene" uid="uid://dgvv122tc3so" path="res://arrow_generator_up.tscn" id="3_1bvp3"]
-[ext_resource type="Texture2D" uid="uid://dtkp7kmx8mg0j" path="res://Songs/image-removebg-preview.png" id="3_ycdy4"]
+[ext_resource type="Texture2D" uid="uid://343ujkc7slxy" path="res://Songs/image-removebg-preview.png" id="3_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://0o2lj1j8bocp" path="res://arrow_generator_right.tscn" id="4_lquwl"]
 [ext_resource type="PackedScene" uid="uid://b8xx4a0llhe" path="res://arrow_generator_left.tscn" id="5_7mycd"]
 [ext_resource type="PackedScene" uid="uid://18qgorg4bg78" path="res://target.tscn" id="7_272bh"]
-[ext_resource type="AudioStream" uid="uid://bho1rruyhkqaf" path="res://Songs/Catena_3.wav" id="8_4c57u"]
+[ext_resource type="AudioStream" uid="uid://bmr3qub5heirb" path="res://Songs/Catena_3.wav" id="8_4c57u"]
 [ext_resource type="Script" uid="uid://dev2mwwbf023n" path="res://player_feedback_ui.gd" id="8_5vw27"]
 [ext_resource type="AudioStream" uid="uid://bw4lxlrxo3wnl" path="res://Songs/Wei_Epilogue.wav" id="8_kek77"]
-[ext_resource type="AudioStream" uid="uid://vfth2fbh715f" path="res://Songs/Nocturne.wav" id="9_efxa6"]
-[ext_resource type="FontFile" uid="uid://c7fpg76otd1gx" path="res://assets/pixelmix.ttf" id="12_dg77c"]
+[ext_resource type="AudioStream" uid="uid://duwdfai5sg2x8" path="res://Songs/Nocturne.wav" id="9_efxa6"]
+[ext_resource type="FontFile" uid="uid://bsgeeyaidclxl" path="res://assets/pixelmix.ttf" id="12_dg77c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ucufk"]
 size = Vector2(636.5, 24)
@@ -1840,7 +1840,11 @@ stream = ExtResource("8_4c57u")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1435726750]
 libraries/ = SubResource("AnimationLibrary_5vw27")
-autoplay = &"Song 3"
+autoplay = &"song 1"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationPlayer" unique_id=86325647]
+libraries/ = SubResource("AnimationLibrary_5vw27")
+autoplay = &"song 1"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1775283826]
 
