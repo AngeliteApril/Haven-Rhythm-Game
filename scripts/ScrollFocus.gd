@@ -140,11 +140,11 @@ func _input(event: InputEvent) -> void:
 func _select_song(song_name: String) -> void:
 	match song_name:
 		"song1":
-			get_tree().change_scene_to_file("res://scenes/level1.tscn")
+			get_tree().change_scene_to_file("res://scenes/level2.tscn")
 
 
 		"song2":
-			get_tree().change_scene_to_file("res://scenes/level2.tscn")
+			get_tree().change_scene_to_file("res://scenes/level1.tscn")
 
 		"song3":
 			get_tree().change_scene_to_file("res://scenes/level3.tscn")

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dsv3dyyr0p0ft"]
+[gd_scene format=3 uid="uid://b58y8aofqj7y0"]
 
 [ext_resource type="Script" uid="uid://c7dcqydwtjk0m" path="res://scenes/GameHandler2.gd" id="1_4ih86"]
 [ext_resource type="Material" uid="uid://42c0uuauuqy" path="res://back.tres" id="2_xeac1"]
@@ -1840,7 +1840,6 @@ stream = ExtResource("9_3eol0")
 
 [node name="GamePlayer" type="AnimationPlayer" parent="." unique_id=1435726750]
 libraries/ = SubResource("AnimationLibrary_5vw27")
-autoplay = &"Song 2"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1775283826]
 
