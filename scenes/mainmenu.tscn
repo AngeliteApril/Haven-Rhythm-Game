@@ -1,7 +1,31 @@
 [gd_scene format=3 uid="uid://coqshv52hgvmo"]
 
+[ext_resource type="Texture2D" uid="uid://m7csj6sgqrmg" path="res://textures/placeholder.png" id="1_5mbse"]
+[ext_resource type="Script" path="res://scenes/ScrollFocus.gd" id="1_natt5"]
+[ext_resource type="Script" path="res://scenes/ScoresHandler.gd" id="3_r3g3c"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ucufk"]
 bg_color = Color(11.708403, 11.708403, 11.708403, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7okha"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_utqmc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q0srp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yfmgw"]
+
+[sub_resource type="Theme" id="Theme_cw06u"]
+VScrollBar/styles/grabber = SubResource("StyleBoxEmpty_7okha")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_utqmc")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_q0srp")
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_yfmgw")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yosia"]
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
 [node name="SongsMenu" type="Control" unique_id=1072254015]
 layout_mode = 3
@@ -11,9 +35,229 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=764240248]
+visible = false
+layout_mode = 0
+offset_left = 39.16684
+offset_top = 139.60999
+offset_right = 266.16684
+offset_bottom = 183.60999
+size_flags_horizontal = 4
+texture = ExtResource("1_5mbse")
+
 [node name="SongsContainer" type="Panel" parent="." unique_id=328259742]
 layout_mode = 0
 offset_right = 665.0
 offset_bottom = 480.0
 scale = Vector2(0.95588857, 0.9989226)
 theme_override_styles/panel = SubResource("StyleBoxFlat_ucufk")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SongsContainer" unique_id=311447170]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -325.52576
+offset_top = -222.23944
+offset_right = 325.52576
+offset_bottom = 222.23944
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="ScrollContain" type="ScrollContainer" parent="SongsContainer/HBoxContainer" unique_id=1049531620]
+custom_minimum_size = Vector2(285, 200)
+layout_mode = 2
+size_flags_vertical = 4
+theme = SubResource("Theme_cw06u")
+script = ExtResource("1_natt5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SongsContainer/HBoxContainer/ScrollContain" unique_id=258025710]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 18
+
+[node name="SongContainer3" type="Panel" parent="SongsContainer/HBoxContainer/ScrollContain/VBoxContainer" unique_id=284816093]
+custom_minimum_size = Vector2(20, 50)
+layout_mode = 2
+
+[node name="Difficulty" type="Label" parent="SongsContainer/HBoxContainer/ScrollContain/VBoxContainer/SongContainer3" unique_id=1587334894]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.7179627
+offset_top = 35.428185
+offset_right = -231.28203
+offset_bottom = -3.5718155
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 7
+text = "(Difficulty)"
+
+[node name="SongTitle" type="Label" parent="SongsContainer/HBoxContainer/ScrollContain/VBoxContainer/SongContainer3" unique_id=1626587302]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.6718152
+offset_top = 4.394753
+offset_right = -227.32819
+offset_bottom = -29.605247
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 11
+text = "Song Title:"
+
+[node name="SongDescription" type="Label" parent="SongsContainer/HBoxContainer/ScrollContain/VBoxContainer/SongContainer3" unique_id=760736368]
+layout_mode = 0
+offset_left = 1.6256683
+offset_top = 20.412014
+offset_right = 197.62567
+offset_bottom = 33.412014
+theme_override_font_sizes/font_size = 9
+text = "Song Description:"
+
+[node name="SongContainer5" type="Panel" parent="SongsContainer/HBoxContainer/ScrollContain/VBoxContainer" unique_id=229852083]
+custom_minimum_size = Vector2(20, 50)
+layout_mode = 2
+
+[node name="Difficulty" type="Label" parent="SongsContainer/HBoxContainer/ScrollContain/VBoxContainer/SongContainer5" unique_id=1808506756]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.7179627
+offset_top = 35.428185
+offset_right = -231.28203
+offset_bottom = -3.5718155
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 7
+text = "(Difficulty)"
+
+[node name="SongTitle" type="Label" parent="SongsContainer/HBoxContainer/ScrollContain/VBoxContainer/SongContainer5" unique_id=2113981546]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.6718152
+offset_top = 4.394753
+offset_right = -227.32819
+offset_bottom = -29.605247
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 11
+text = "Song Title:"
+
+[node name="SongDescription" type="Label" parent="SongsContainer/HBoxContainer/ScrollContain/VBoxContainer/SongContainer5" unique_id=1128660162]
+layout_mode = 0
+offset_left = 1.6256683
+offset_top = 20.412014
+offset_right = 197.62567
+offset_bottom = 33.412014
+theme_override_font_sizes/font_size = 9
+text = "Song Description:"
+
+[node name="SongContainer4" type="Panel" parent="SongsContainer/HBoxContainer/ScrollContain/VBoxContainer" unique_id=1275299922]
+custom_minimum_size = Vector2(20, 50)
+layout_mode = 2
+
+[node name="Difficulty" type="Label" parent="SongsContainer/HBoxContainer/ScrollContain/VBoxContainer/SongContainer4" unique_id=236494881]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.7179627
+offset_top = 35.428185
+offset_right = -231.28203
+offset_bottom = -3.5718155
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 7
+text = "(Difficulty)"
+
+[node name="SongTitle" type="Label" parent="SongsContainer/HBoxContainer/ScrollContain/VBoxContainer/SongContainer4" unique_id=65563130]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.6718152
+offset_top = 4.394753
+offset_right = -227.32819
+offset_bottom = -29.605247
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 11
+text = "Song Title:"
+
+[node name="SongDescription" type="Label" parent="SongsContainer/HBoxContainer/ScrollContain/VBoxContainer/SongContainer4" unique_id=1221558668]
+layout_mode = 0
+offset_left = 1.6256683
+offset_top = 20.412014
+offset_right = 197.62567
+offset_bottom = 33.412014
+theme_override_font_sizes/font_size = 9
+text = "Song Description:"
+
+[node name="ScoresBoard" type="Panel" parent="SongsContainer/HBoxContainer" unique_id=821322411]
+custom_minimum_size = Vector2(340, 250)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_yosia")
+script = ExtResource("3_r3g3c")
+
+[node name="Label" type="Label" parent="SongsContainer/HBoxContainer/ScoresBoard" unique_id=917285354]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="SongTemplate" type="Panel" parent="." unique_id=587769785]
+visible = false
+custom_minimum_size = Vector2(20, 50)
+layout_mode = 0
+offset_left = 11.446042
+offset_top = 139.60999
+offset_right = 296.44604
+offset_bottom = 189.60999
+
+[node name="Difficulty" type="Label" parent="SongTemplate" unique_id=1965187732]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.7179627
+offset_top = 35.428185
+offset_right = -231.28203
+offset_bottom = -3.5718155
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 7
+text = "(Difficulty)"
+
+[node name="SongTitle" type="Label" parent="SongTemplate" unique_id=67151885]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.6718152
+offset_top = 4.394753
+offset_right = -227.32819
+offset_bottom = -29.605247
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 11
+text = "Song Title:"
+
+[node name="SongDescription" type="Label" parent="SongTemplate" unique_id=952783284]
+layout_mode = 0
+offset_left = 1.6256683
+offset_top = 20.412014
+offset_right = 197.62567
+offset_bottom = 33.412014
+theme_override_font_sizes/font_size = 9
+text = "Song Description:"

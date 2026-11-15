@@ -6,12 +6,18 @@ var entered: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	DataHandler.save()
 	DataHandler.load()
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_enter"):
-		get_tree().change_scene_to_file("res://scenes/optionsmenu.tscn")
+		var sessiosntatus = DataHandler.get_data("firstsession")
+		if !sessiosntatus:
+			DataHandler.set_data("firstsession", true)
+			DataHandler.save()
+			get_tree().change_scene_to_file("res://scenes/optionsmenu.tscn")
+		else:
+			print("Not First Session")
+			get_tree().change_scene_to_file("res://scenes/mainmenu.tscn")
 
 
 func _notification(what: int) -> void:
