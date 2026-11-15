@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://chvsm5hmsflx1"]
+[gd_scene format=3 uid="uid://dsv3dyyr0p0ft"]
 
 [ext_resource type="Script" uid="uid://c7dcqydwtjk0m" path="res://scenes/GameHandler2.gd" id="1_xa7n4"]
 [ext_resource type="Material" uid="uid://42c0uuauuqy" path="res://back.tres" id="2_bo4dx"]
@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://dgvv122tc3so" path="res://arrow_generator_up.tscn" id="5_56gwk"]
 [ext_resource type="PackedScene" uid="uid://0o2lj1j8bocp" path="res://arrow_generator_right.tscn" id="6_ve5ok"]
 [ext_resource type="PackedScene" uid="uid://b8xx4a0llhe" path="res://arrow_generator_left.tscn" id="7_cleqw"]
-[ext_resource type="AudioStream" uid="uid://c1vatx0kslikn" path="res://Biri-Biri.wav" id="8_wvb8j"]
 [ext_resource type="Script" uid="uid://dev2mwwbf023n" path="res://player_feedback_ui.gd" id="9_g8vcy"]
+[ext_resource type="AudioStream" uid="uid://bw4lxlrxo3wnl" path="res://Songs/Wei_Epilogue.wav" id="11_g8vcy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ucufk"]
 size = Vector2(636.5, 20)
@@ -18,7 +18,7 @@ size = Vector2(642, 161)
 
 [sub_resource type="Animation" id="Animation_272bh"]
 resource_name = "song 1"
-length = 18.8
+length = 69.0
 step = 0.3
 tracks/0/type = "audio"
 tracks/0/imported = false
@@ -30,7 +30,7 @@ tracks/0/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("8_wvb8j")
+"stream": ExtResource("11_g8vcy")
 }],
 "times": PackedFloat32Array(0)
 }
@@ -42,27 +42,9 @@ tracks/1/path = NodePath("ArrowGenerator")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.33333337, 1, 1.6666666, 2.3333333, 3, 3.3333333, 3.6666667, 4.3333335, 5.6666665, 7.3333335, 8.333334, 10.333334, 11.666667, 13.333334, 14.333334, 16.333334, 17.666666),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(4.285714, 11.942858, 16.142857, 23.242857, 35.914288, 37.314285, 39.857143, 41.257145, 42.857143, 45.057144, 56.942856),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "values": [{
-"args": [],
-"method": &"make_arrow"
-}, {
-"args": [],
-"method": &"make_arrow"
-}, {
-"args": [],
-"method": &"make_arrow"
-}, {
-"args": [],
-"method": &"make_arrow"
-}, {
-"args": [],
-"method": &"make_arrow"
-}, {
-"args": [],
-"method": &"make_arrow"
-}, {
 "args": [],
 "method": &"make_arrow"
 }, {
@@ -104,36 +86,9 @@ tracks/2/path = NodePath("ArrowGeneratorUp")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.6666667, 1.3333334, 1.6666666, 2.6666667, 4, 5.3333335, 6, 8, 9, 9.666667, 10.666667, 11, 11.333334, 12.333334, 13, 14.666667, 15.333334, 16.666668, 17.333334),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(8.342857, 24.042856, 32.714287, 38.014286, 39.014286, 39.857143, 42.157146, 52, 55, 57.642857),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "values": [{
-"args": [],
-"method": &"make_arrow"
-}, {
-"args": [],
-"method": &"make_arrow"
-}, {
-"args": [],
-"method": &"make_arrow"
-}, {
-"args": [],
-"method": &"make_arrow"
-}, {
-"args": [],
-"method": &"make_arrow"
-}, {
-"args": [],
-"method": &"make_arrow"
-}, {
-"args": [],
-"method": &"make_arrow"
-}, {
-"args": [],
-"method": &"make_arrow"
-}, {
-"args": [],
-"method": &"make_arrow"
-}, {
 "args": [],
 "method": &"make_arrow"
 }, {
@@ -172,18 +127,9 @@ tracks/3/path = NodePath("ArrowGeneratorRight")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(1, 3.3333333, 4.6666665, 7, 7.6666665, 8.333333, 9.333333, 10, 12, 13.333334, 14, 15, 16, 17, 18.333334),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(4.285714, 7.714286, 15.042856, 19.542856, 22.842857, 24.042856, 34.11429, 35.11429, 42.857143, 45.757145, 51.285713, 58.442856),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "values": [{
-"args": [],
-"method": &"make_arrow"
-}, {
-"args": [],
-"method": &"make_arrow"
-}, {
-"args": [],
-"method": &"make_arrow"
-}, {
 "args": [],
 "method": &"make_arrow"
 }, {
@@ -228,54 +174,9 @@ tracks/4/path = NodePath("ArrowGeneratorLeft")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0.33333337, 1.3333334, 2, 2.6666667, 4, 5, 5.3333335, 6, 6.6666665, 7.3333335, 8, 10.333334, 11.666667, 12.666667, 13.666667, 14.333334, 15.333334, 16.666668),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(36.61429, 40.657146, 48.857143),
+"transitions": PackedFloat32Array(1, 1, 1),
 "values": [{
-"args": [],
-"method": &"make_arrow"
-}, {
-"args": [],
-"method": &"make_arrow"
-}, {
-"args": [],
-"method": &"make_arrow"
-}, {
-"args": [],
-"method": &"make_arrow"
-}, {
-"args": [],
-"method": &"make_arrow"
-}, {
-"args": [],
-"method": &"make_arrow"
-}, {
-"args": [],
-"method": &"make_arrow"
-}, {
-"args": [],
-"method": &"make_arrow"
-}, {
-"args": [],
-"method": &"make_arrow"
-}, {
-"args": [],
-"method": &"make_arrow"
-}, {
-"args": [],
-"method": &"make_arrow"
-}, {
-"args": [],
-"method": &"make_arrow"
-}, {
-"args": [],
-"method": &"make_arrow"
-}, {
-"args": [],
-"method": &"make_arrow"
-}, {
-"args": [],
-"method": &"make_arrow"
-}, {
 "args": [],
 "method": &"make_arrow"
 }, {
@@ -347,6 +248,7 @@ position = Vector2(485, 0)
 position = Vector2(185, 0)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=847977464]
+volume_db = 20.293
 
 [node name="GamePlayer" type="AnimationPlayer" parent="." unique_id=1435726750]
 libraries/ = SubResource("AnimationLibrary_5vw27")

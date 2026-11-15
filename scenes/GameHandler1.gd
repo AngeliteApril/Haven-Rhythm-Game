@@ -25,73 +25,73 @@ signal miss
 
 
 func _ready() -> void:
-    animPLayer.animation_finished.connect(_onGameEnd)
-    miss_zone.area_entered.connect(_on_miss_zone_area_entered)
+	animPLayer.animation_finished.connect(_onGameEnd)
+	miss_zone.area_entered.connect(_on_miss_zone_area_entered)
 
-    # Start song animation
-    animPLayer.play("Song 2")
+	# Start song animation
+	animPLayer.play("Song 2")
 
 
 func _input(event: InputEvent) -> void:
-    if event.is_action_pressed("ui_down"):
-        down = true
-    elif event.is_action_released("ui_down"):
-        down = false
+	if event.is_action_pressed("ui_down"):
+		down = true
+	elif event.is_action_released("ui_down"):
+		down = false
 
-    if event.is_action_pressed("ui_up"):
-        up = true
-    elif event.is_action_released("ui_up"):
-        up = false
+	if event.is_action_pressed("ui_up"):
+		up = true
+	elif event.is_action_released("ui_up"):
+		up = false
 
-    if event.is_action_pressed("ui_left"):
-        left = true
-    elif event.is_action_released("ui_left"):
-        left = false
+	if event.is_action_pressed("ui_left"):
+		left = true
+	elif event.is_action_released("ui_left"):
+		left = false
 
-    if event.is_action_pressed("ui_right"):
-        right = true
-    elif event.is_action_released("ui_right"):
-        right = false
+	if event.is_action_pressed("ui_right"):
+		right = true
+	elif event.is_action_released("ui_right"):
+		right = false
 
-    if event.is_action_pressed("ui_test_up"):
-        arrow_generator_up.make_arrow()
+	if event.is_action_pressed("ui_test_up"):
+		arrow_generator_up.make_arrow()
 
-    if event.is_action_pressed("ui_test_down"):
-        arrow_generator.make_arrow()
+	if event.is_action_pressed("ui_test_down"):
+		arrow_generator.make_arrow()
 
 
 func _process(_delta: float) -> void:
-    for x in area_2d.get_overlapping_areas():
-        if down and x.name.contains("Down"):
-            down_target.animation_player.play("Hit")
-            hit.emit()
-            x.queue_free()
-            down = false
+	for x in area_2d.get_overlapping_areas():
+		if down and x.name.contains("Down"):
+			down_target.animation_player.play("Hit")
+			hit.emit()
+			x.queue_free()
+			down = false
 
-        if up and x.name.contains("Up"):
-            up_target.animation_player.play("Hit")
-            hit.emit()
-            x.queue_free()
-            up = false
+		if up and x.name.contains("Up"):
+			up_target.animation_player.play("Hit")
+			hit.emit()
+			x.queue_free()
+			up = false
 
-        if left and x.name.contains("Left"):
-            left_target.animation_player.play("Hit")
-            hit.emit()
-            x.queue_free()
-            left = false
+		if left and x.name.contains("Left"):
+			left_target.animation_player.play("Hit")
+			hit.emit()
+			x.queue_free()
+			left = false
 
-        if right and x.name.contains("Right"):
-            right_target.animation_player.play("Hit")
-            hit.emit()
-            x.queue_free()
-            right = false
+		if right and x.name.contains("Right"):
+			right_target.animation_player.play("Hit")
+			hit.emit()
+			x.queue_free()
+			right = false
 
 
 func _onGameEnd(anim_name: StringName) -> void:
-    if anim_name == "Song 2":
-        print("This Game Has Ended!")
+	if anim_name == "Song 2":
+		print("This Game Has Ended!")
 
 
 func _on_miss_zone_area_entered(area: Area2D) -> void:
-    miss.emit()
-    area.queue_free()
+	miss.emit()
+	area.queue_free()
