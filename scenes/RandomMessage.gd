@@ -1,11 +1,11 @@
 extends Label
 
 var messages = [
-	"You gotta Get Back Up!",
-	"Bounce right back knuckle head",
-	"Cmon man we gotta get goin",
-	"Dude whats wrong man lets get back into it",
-	"Its fine u failed but we can do this",
+	"You gotta BOUNCE BACK!",
+	"BOUNCE BACK knuckle head",
+	"Cmon man we gotta BOUNCE BACK",
+	"Whats wrong? We need to BOUNCE BACK",
+	"Its fine, you just have to BOUNCE BACK",
 ]
 
 func _ready() -> void:

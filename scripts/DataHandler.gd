@@ -1,6 +1,6 @@
 extends Node
 
-const DATA_FILE = "user://game-rhythmdata.json"
+const DATA_FILE = "user://gamedatamain.json"
 
 
 var playerdata = {
@@ -11,6 +11,8 @@ var playerdata = {
 	},
 	"firstsession": false
 }
+
+
 
 var songdata = {
 	"song1": {

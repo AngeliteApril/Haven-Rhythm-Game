@@ -53,11 +53,7 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_released("ui_right"):
 		right = false
 
-	if event.is_action_pressed("ui_test_up"):
-		arrow_generator_up.make_arrow()
 
-	if event.is_action_pressed("ui_test_down"):
-		arrow_generator.make_arrow()
 
 
 func _process(_delta: float) -> void:

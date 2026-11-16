@@ -22,6 +22,21 @@ func _ready() -> void:
 
 		songSelectFrame.visible = true
 		songSelectFrame.name = str(song)
+		
+		var style = StyleBoxFlat.new()
+		
+		if song == "song1": 
+			print("YES")
+			style.bg_color = Color(0.22, 0.662, 0.636, 1.0)
+		
+		elif song == "song2":
+			style.bg_color = Color(0.914, 0.861, 0.0, 1.0)
+		
+		elif song == "song3":
+			style.bg_color = Color(1.0, 0.149, 0.677, 1.0)
+			
+		songSelectFrame.add_theme_stylebox_override("panel", style)
+			
 
 		songSelectFrame.get_node("Difficulty").text = songdatatable.difficulty
 		songSelectFrame.get_node("SongTitle").text = songdatatable.songtitle
