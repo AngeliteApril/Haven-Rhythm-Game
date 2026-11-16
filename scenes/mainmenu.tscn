@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://coqshv52hgvmo"]
 
-[ext_resource type="Texture2D" uid="uid://m7csj6sgqrmg" path="res://textures/placeholder.png" id="1_5mbse"]
-[ext_resource type="Script" uid="uid://chj6t02q52yp0" path="res://scripts/ScrollFocus.gd" id="2_natt5"]
+[ext_resource type="Texture2D" uid="uid://o6l7oo5356n4" path="res://textures/placeholder.png" id="1_5mbse"]
+[ext_resource type="Script" uid="uid://bsx3dtjllw13j" path="res://scripts/ScrollFocus.gd" id="2_natt5"]
 [ext_resource type="Script" uid="uid://2ycemphdfkss" path="res://scripts/ScrollDetection.gd" id="3_r3g3c"]
+[ext_resource type="Script" uid="uid://dof8u02xs137p" path="res://scenes/ScoreBoardHandler.gd" id="3_s5g8n"]
+[ext_resource type="FontFile" uid="uid://bsgeeyaidclxl" path="res://assets/pixelmix.ttf" id="4_7yvfd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ucufk"]
 bg_color = Color(11.708403, 11.708403, 11.708403, 1)
@@ -34,6 +36,29 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ScoreTemplate" type="Panel" parent="." unique_id=1095410817]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 0
+offset_left = 299.1685
+offset_top = 164.58304
+offset_right = 639.16846
+offset_bottom = 199.58304
+
+[node name="Number" type="Label" parent="ScoreTemplate" unique_id=88832102]
+layout_mode = 0
+offset_left = 8.0
+offset_right = 48.0
+offset_bottom = 23.0
+text = "#1"
+
+[node name="Score" type="Label" parent="ScoreTemplate" unique_id=201783032]
+layout_mode = 0
+offset_left = 33.0
+offset_right = 76.0
+offset_bottom = 23.0
+text = "Score"
 
 [node name="SongTemplate" type="Panel" parent="." unique_id=284816093]
 custom_minimum_size = Vector2(20, 50)
@@ -146,10 +171,27 @@ layout_mode = 2
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_yosia")
 
-[node name="Label" type="Label" parent="SongsContainer/HBoxContainer/ScoresBoard" unique_id=917285354]
+[node name="ScrollContainer" type="ScrollContainer" parent="SongsContainer/HBoxContainer/ScoresBoard" unique_id=1135499101]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_top = 50.0
+offset_right = 340.0
+offset_bottom = 250.0
+script = ExtResource("3_s5g8n")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SongsContainer/HBoxContainer/ScoresBoard/ScrollContainer" unique_id=917731971]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="LeaderBoardTitle" type="Label" parent="SongsContainer/HBoxContainer/ScoresBoard" unique_id=908973631]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 5.0
+offset_right = 351.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("4_7yvfd")
+theme_override_font_sizes/font_size = 24
+text = "Scores LeaderBoard"
 
 [node name="ScrollDetect" type="Panel" parent="." unique_id=1949905075]
 visible = false

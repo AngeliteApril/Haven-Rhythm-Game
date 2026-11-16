@@ -29,9 +29,6 @@ func _ready() -> void:
 	miss_zone.area_entered.connect(_on_miss_zone_area_entered)
 
 	# Start song animation
-	animPLayer.play("Song 2")
-
-	# Start song animation
 	animPLayer.play("song 1")
 	
 
@@ -91,7 +88,13 @@ func _process(_delta: float) -> void:
 
 
 func _onGameEnd(anim_name: StringName) -> void:
-	if anim_name == "Song 2":
+	if anim_name == "song 1":
+		var score = playerScoreAcess._returnscores()
+		var scores = DataHandler.get_data("scores")
+		scores.append(score)
+		DataHandler.set_data("scores", scores)
+		DataHandler.save()
+		get_tree().change_scene_to_file("res://scenes/endscreen.tscn")
 		print("This Game Has Ended!")
 
 

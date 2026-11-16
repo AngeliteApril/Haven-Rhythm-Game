@@ -248,7 +248,7 @@ position = Vector2(485, 0)
 position = Vector2(185, 0)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=847977464]
-volume_db = 20.293
+volume_db = 1.364
 
 [node name="GamePlayer" type="AnimationPlayer" parent="." unique_id=1435726750]
 libraries/ = SubResource("AnimationLibrary_5vw27")

@@ -14,25 +14,25 @@ var playerdata = {
 
 var songdata = {
 	"song1": {
-		"songtitle": "content1",
-		"artist": "content",
-		"songdescription": "content",
+		"songtitle": "Basics",
+		"artist": "Intense Piano Solo 'Everlasting' ",
+		"songdescription": "Pracy",
 		"songpath": "content",
 		"difficulty": "Easy"
 	},
 	"song2": {
-		"songtitle": "content2",
-		"artist": "content",
-		"songdescription": "content",
+		"songtitle": "Journey",
+		"artist": "Convexity 'Complexity'",
+		"songdescription": "Pracy",
 		"songpath": "content",
-		"difficulty": "Medium"
+		"difficulty": "Advanced"
 	},
 	"song3": {
-		"songtitle": "content3",
-		"artist": "content",
-		"songdescription": "content",
-		"songpath": "content",
-		"difficulty": "Hard"
+		"songtitle": "Finale",
+		"artist": "Die Die Die 'Rant'",
+		"songdescription": "Pracy",
+		"songpath": "",
+		"difficulty": "Expert"
 	},
 
 	
